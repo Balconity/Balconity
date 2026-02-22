@@ -4,7 +4,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui'
   ],
-  ssr: true,
 
   devtools: {
     enabled: true
@@ -12,13 +11,10 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  routeRules: {
-    '/': { prerender: true }
-  },
-
   compatibilityDate: '2025-01-15',
+
   nitro: {
-    preset: 'aws_amplify'
+    preset: 'aws-amplify'
   },
 
   eslint: {
