@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui'
   ],
+  ssr: true,
 
   devtools: {
     enabled: true
@@ -16,6 +17,9 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-01-15',
+  nitro: {
+    preset: 'aws-amplify'
+  },
 
   eslint: {
     config: {
