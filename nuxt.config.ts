@@ -13,6 +13,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY,
+    gmailUser: process.env.SMTP_USER,
+    gmailAppPassword: process.env.SMTP_PASS,
     contactEmail: process.env.CONTACT_EMAIL
   },
 
