@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui'
@@ -10,6 +11,10 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    resendApiKey: process.env.RESEND_API_KEY,
+    contactEmail: process.env.CONTACT_EMAIL
+  },
 
   compatibilityDate: '2025-01-15',
 
@@ -24,5 +29,5 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
-  }
+  },
 })

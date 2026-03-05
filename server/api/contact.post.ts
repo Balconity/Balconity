@@ -1,12 +1,12 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig()
+  const resend = new Resend(config.resendApiKey)
+
   const body = await readBody(event)
   const { name, email, subject, message } = body
 
-  // Validation
   if (!name || !email || !subject || !message) {
     throw createError({
       statusCode: 400, message: 'All fields are required.'
@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
 
   const { error } = await resend.emails.send({
     from: 'Balconity Contact Form <website@contact.balconity.com>',
-    to: process.env.CONTACT_EMAIL as string,
+    to: config.contactEmail as string,
     replyTo: email,
     subject: subject,
     html: `
