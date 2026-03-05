@@ -58,8 +58,9 @@ export default defineEventHandler(async (event) => {
   })
 
   if (error) {
+    console.error('Resend Error:', error)
     throw createError({
-      statusCode: 500, message: 'Failed to send email. Please try again later.'
+      statusCode: 500, message: error.message ?? 'Failed to send email. Please try again later.'
     })
   }
 
