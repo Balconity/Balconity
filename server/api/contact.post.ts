@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const { error } = await resend.emails.send({
-    from: 'Balconity Contact Form <website@contact.balconity.com>',
+    from: 'no-reply@contact.balconity.com',
     to: config.contactEmail as string,
     replyTo: email,
     subject: subject,
