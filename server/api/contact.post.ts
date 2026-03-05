@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
         </p>
       </div>
     `
-})
+  })
 
   if (error) {
     throw createError({
