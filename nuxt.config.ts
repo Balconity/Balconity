@@ -3,11 +3,17 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxtjs/sitemap'
   ],
 
   devtools: {
     enabled: true
+  },
+
+  site: {
+    url: 'https://balconity.com',
+    name: 'Balconity'
   },
 
   css: ['~/assets/css/main.css'],
